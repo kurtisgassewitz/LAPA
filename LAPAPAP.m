@@ -41,4 +41,10 @@ figure(2)
 quiver(X,Y,DX,DY);
 pause(0.05);
 
-imboxfilt(V,3);
+figure(3)
+Vim = imboxfilt(V,3);
+Vim(:, NX) = V1;
+Vim(:, 1) = V2;
+Vim(1, :) = V3;
+Vim(NY,:) = V4;
+surf(X,Y,Vim);
